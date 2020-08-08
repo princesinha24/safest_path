@@ -1,0 +1,28 @@
+// SAMPLE 1
+10 
+13
+4 5 2 4 1 4 2 0 2 3
+10 8 40
+1 2 70
+1 3 100
+1 4 65
+2 6 20
+3 5 30 
+4 5 20
+5 8 20
+6 7 30
+5 9 10
+7 8 10
+7 10 40
+9 10 70
+7 3
+n=10 and m=12
+next n integer are no corona cases in ith locality
+next m line contain 3 integer intial_node, final_node, traveling cost
+next line contain starting and ending point
+
+We have to calculate the minimume danger path which they travelled and min cost 
+OUPUPT is:
+minimum danger=5
+minimum cost=60
+path travel: 7->8->5->3

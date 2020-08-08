@@ -2,31 +2,41 @@
 //containment zone with minimum cost 
 #include <iostream>
 #include <vector>
-#include <limits.h>
+#define infinite 1e9
 using namespace std;
 class safest_path{
 	private:	int n;                            // n is number of nodes
                 int m;                            //m is the no of path 
 				int a[1024],vi[1024],dan[1024],cost[1024],path[1024];
+				/*vi[i] denote the visited graph, dan[i] denote the danger of a passenger,
+				cost[i] denote the min cost to reach a point, path[i] represent the next node*/ 
 				vector<pair<int,int>>b[1024];       //store the graph in matrix form
-	public:		safest_path(int p=0,int q=0){
-					n=p;
-					m=q;
-				}
-				void intiliase();               //used to intialise the array
-				void cost_path();               //used to create graph
-				void solve();                     
-				int danger();                   // calculate the danger of passenger
-				int min_cost();                 //calculate min cost
-				void req_path();                //give the path
+				int start,end;
+	public:	safest_path(int p=0,int q=0){
+				n=p;
+				m=q;
+			}
+			void intiliase();               //used to intialise the array
+			void cost_path();				//used to create graph
+			void two_point(){
+				int p,q;
+				cout<<"Enter starting and Finishing point"<<endl;
+				cin>>p>>q;
+				start=p;
+				end=q;
+			}
+			void solve();                     
+			int danger();                   // calculate the danger of passenger
+			int min_cost();                 //calculate min cost
+			void req_path();                //give the path
 	};
 	void safest_path::intiliase(){
 		for(int i=0;i<n;i++){
 		//	cout<<"enter No of corona case in node "<<i+1<<" ";
 			cin>>a[i];
 			vi[i]=0;
-			cost[i]=INT_MAX;                   // Intialise as infinite
-			dan[i]=INT_MAX;
+			cost[i]=infinite;                   // Intialise as infinite
+			dan[i]=infinite;
 		}
 	}
 	void safest_path::cost_path(){
@@ -39,10 +49,10 @@ class safest_path{
 	}
 	void safest_path::solve(){
 		vector<int>v;
-		v.push_back(n-1);
-		vi[n-1]=1;
-		dan[n-1]=a[n-1];
-		cost[n-1]=0;
+		v.push_back(end-1);
+		vi[end-1]=1;
+		dan[end-1]=a[end-1];
+		cost[end-1]=0;
 		for(int i=0;i<v.size();i++){
 			int k=v[i];
 			for(int j=0;j<b[k].size();j++){
@@ -67,17 +77,18 @@ class safest_path{
 		}
 	}
 	int safest_path::danger(){
-		return dan[0];
+		return dan[start-1];
 	}
 	int safest_path::min_cost(){
-		return cost[0];
+		return cost[start-1];
 	}
 	void safest_path::req_path(){
-		int p=0;
+		int p=start-1;
+        cout<<"path travel: ";
 		while(1){
 			cout<<p+1<<"->";
 			p=path[p];
-			if(p==n-1){
+			if(p==end-1){
 				break;
 			}
 		}
@@ -92,6 +103,7 @@ int main() {
 	safest_path ob(p,q);
 	ob.intiliase();
 	ob.cost_path();
+	ob.two_point();
 	ob.solve();
 	cout<<"minimum danger="<<ob.danger()<<endl;
 	cout<<"minimum cost="<<ob.min_cost()<<endl;
