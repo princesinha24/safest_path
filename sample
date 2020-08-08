@@ -14,8 +14,9 @@
 7 10 40
 9 10 70
 n=10 and m=12
-next n integer are no corona cases
-next m line contain 3 integer intial_node,final_node,cost
+next n integer are no corona cases in ith locality
+next m line contain 3 integer intial_node, final_node, traveling cost
+We have to go from node 1 to node N
 
 OUPUPT is:
 minimum danger=12
