@@ -5,24 +5,24 @@
 #include <limits.h>
 using namespace std;
 class safest_path{
-	private:	int n;                            // n is number of nodes
+	private:int n;                            // n is number of nodes
                 int m;                            //m is the no of path 
-				int a[1024],vi[1024],dan[1024],cost[1024],path[1024];
-				vector<pair<int,int>>b[1024];       //store the graph in matrix form
-	public:		safest_path(int p=0,int q=0){
-					n=p;
-					m=q;
-				}
-				void intiliase();               //used to intialise the array
-				void cost_path();               //used to create graph
-				void solve();                     
-				int danger();                   // calculate the danger of passenger
-				int min_cost();                 //calculate min cost
-				void req_path();                //give the path
+		int a[1024],vi[1024],dan[1024],cost[1024],path[1024];
+		vector<pair<int,int>>b[1024];       //store the graph in matrix form
+	public:	safest_path(int p=0,int q=0){
+				n=p;
+				m=q;
+		}
+		void intiliase();               //used to intialise the array
+		void cost_path();               //used to create graph
+		void solve();                     
+		int danger();                   // calculate the danger of passenger
+		int min_cost();                 //calculate min cost
+		void req_path();                //give the path
 	};
 	void safest_path::intiliase(){
 		for(int i=0;i<n;i++){
-		//	cout<<"enter No of corona case in node "<<i+1<<" ";
+			cout<<"enter No of corona case in node "<<i+1<<" ";
 			cin>>a[i];
 			vi[i]=0;
 			cost[i]=INT_MAX;                   // Intialise as infinite
