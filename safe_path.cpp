@@ -7,9 +7,8 @@ using namespace std;
 class safest_path{
 	private:int n;                            // n is number of nodes
                 int m;                            //m is the no of path 
-		int a[1024],vi[1024],dan[1024],cost[1024],path[1024];
-				/*vi[i] denote the visited graph, dan[i] denote the danger of a passenger,
-				cost[i] denote the min cost to reach a point, path[i] represent the next node*/ 
+		int a[1024],vi[1024],dan[1024],cost[1024],path[1024]; 	/*vi[i] denote the visited graph, dan[i] denote the danger of a passenger,
+									cost[i] denote the min cost to reach a point, path[i] represent the next node*/
 		vector<pair<int,int>>b[1024];       //store the graph in matrix form
 		int start,end;
 	public:	safest_path(int p=0,int q=0){
