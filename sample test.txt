@@ -21,7 +21,7 @@ next n integer are no corona cases in ith locality
 next m line contain 3 integer intial_node, final_node, traveling cost
 next line contain starting and ending point
 
-We have to calculate the minimume danger path which they travelled and min cost 
+We have to calculate the minimume danger path from 7 to 3 which they travelled at minimum cost 
 OUPUPT is:
 minimum danger=5
 minimum cost=60
