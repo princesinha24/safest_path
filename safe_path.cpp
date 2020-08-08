@@ -5,9 +5,8 @@
 #define infinite 1e9
 using namespace std;
 class safest_path{
-	private:int n;                            // n is number of nodes
+	private:	int n;                            // n is number of nodes
                 int m;                            //m is the no of path 
-<<<<<<< HEAD
 				int a[1024],vi[1024],dan[1024],cost[1024],path[1024];
 				/*vi[i] denote the visited graph, dan[i] denote the danger of a passenger,
 				cost[i] denote the min cost to reach a point, path[i] represent the next node*/ 
@@ -21,7 +20,7 @@ class safest_path{
 			void cost_path();				//used to create graph
 			void two_point(){
 				int p,q;
-				cout<<"Enter starting and Finishing point"<<endl;
+				cout<<"Enter starting and Finishing point";
 				cin>>p>>q;
 				start=p;
 				end=q;
@@ -30,24 +29,10 @@ class safest_path{
 			int danger();                   // calculate the danger of passenger
 			int min_cost();                 //calculate min cost
 			void req_path();                //give the path
-=======
-		int a[1024],vi[1024],dan[1024],cost[1024],path[1024];
-		vector<pair<int,int>>b[1024];       //store the graph in matrix form
-	public:	safest_path(int p=0,int q=0){
-				n=p;
-				m=q;
-		}
-		void intiliase();               //used to intialise the array
-		void cost_path();               //used to create graph
-		void solve();                     
-		int danger();                   // calculate the danger of passenger
-		int min_cost();                 //calculate min cost
-		void req_path();                //give the path
->>>>>>> e30fbdc7dbf19de4f4be791b15727d4f9f6829e6
 	};
 	void safest_path::intiliase(){
 		for(int i=0;i<n;i++){
-			cout<<"enter No of corona case in node "<<i+1<<" ";
+		//	cout<<"enter No of corona case in node "<<i+1<<" ";
 			cin>>a[i];
 			vi[i]=0;
 			cost[i]=infinite;                   // Intialise as infinite
